@@ -1,0 +1,7 @@
+﻿@model AspNetProject.Web.ViewModels.SkillViewModel
+    <div>
+        <strong>@Model.Name</strong>
+        Count:@Model.EndorsementsCount
+        <br/>
+        Endorsers:@Html.DisplayFor(x=>x.Endorsers)
+    </div>

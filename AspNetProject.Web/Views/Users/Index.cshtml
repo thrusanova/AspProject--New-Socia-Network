@@ -1,0 +1,28 @@
+﻿@model AspNetProject.Web.ViewModels.UserViewModel
+<h1>@Html.DisplayFor(x => x.UserName)</h1>
+
+
+<img src="@Model.AvatarUrl" alt="@Model.UserName avatar" width="200" />
+<br/>
+
+@Html.DisplayNameFor(x=>x.Email):@Html.DisplayFor(x=>x.Email)
+<br/>
+@Html.DisplayNameFor(x => x.FullName):@Html.DisplayFor(x => x.FullName)
+<br />
+@Html.DisplayNameFor(x => x.ContactInfo.FaceBook):<a href="https://www.facebook.com/@Model.ContactInfo.FaceBook">@Model.ContactInfo.FaceBook</a>
+<br />
+@Html.DisplayNameFor(x => x.ContactInfo.Twitter):@Html.DisplayFor(x => x.ContactInfo.Twitter)
+<br />
+@Html.DisplayNameFor(x => x.ContactInfo.WebSite):<a href="http://@Model.ContactInfo.WebSite">@Model.ContactInfo.WebSite</a>
+<br />
+@Html.DisplayNameFor(x => x.ContactInfo.Phone):@Html.DisplayFor(x => x.ContactInfo.Phone)
+<br/>
+@Html.DisplayNameFor(m => m.Certifications):
+@foreach (var item in Model.Certifications)
+{
+    <div>
+        <strong>@item.Name</strong>
+        <p><a href="https://@item.Url">@item.Url</a></p>
+    </div>
+}
+
